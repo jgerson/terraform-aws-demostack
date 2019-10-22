@@ -72,7 +72,7 @@ module "primarycluster" {
   nomad_gossip_key      = data.terraform_remote_state.terraform-tls-certificate.outputs.nomad_gossip_key
 }
 
-/*
+
 module "secondarycluster" {
     source = "./modules"
   owner                = var.owner
@@ -104,15 +104,15 @@ module "secondarycluster" {
   host_access_ip       = var.host_access_ip
   primary_datacenter   = var.primary_datacenter
   # EMEA-SE-PLAYGROUND
-  ca_key_algorithm      = data.terraform_remote_state.emea_se_playground_tls_root_certificate.outputs.ca_key_algorithm
-  ca_private_key_pem    = data.terraform_remote_state.emea_se_playground_tls_root_certificate.outputs.ca_private_key_pem
-  ca_cert_pem           = data.terraform_remote_state.emea_se_playground_tls_root_certificate.outputs.ca_cert_pem
-  consul_join_tag_value = "${var.namespace}-${data.terraform_remote_state.emea_se_playground_tls_root_certificate.outputs.consul_join_tag_value}"
-  consul_gossip_key     = data.terraform_remote_state.emea_se_playground_tls_root_certificate.outputs.consul_gossip_key
-  consul_master_token   = data.terraform_remote_state.emea_se_playground_tls_root_certificate.outputs.consul_master_token
-  nomad_gossip_key      = data.terraform_remote_state.emea_se_playground_tls_root_certificate.outputs.nomad_gossip_key
+  ca_key_algorithm      = data.terraform_remote_state.terraform-tls-certificate.outputs.ca_key_algorithm
+  ca_private_key_pem    = data.terraform_remote_state.terraform-tls-certificate.outputs.ca_private_key_pem
+  ca_cert_pem           = data.terraform_remote_state.terraform-tls-certificate.outputs.ca_cert_pem
+  consul_join_tag_value = "${var.namespace}-${data.terraform_remote_state.terraform-tls-certificate.outputs.consul_join_tag_value}"
+  consul_gossip_key     = data.terraform_remote_state.terraform-tls-certificate.outputs.consul_gossip_key
+  consul_master_token   = data.terraform_remote_state.terraform-tls-certificate.outputs.consul_master_token
+  nomad_gossip_key      = data.terraform_remote_state.terraform-tls-certificate.outputs.nomad_gossip_key
 }
-*/
+
 
 /*
 module "tertiarycluster" {
