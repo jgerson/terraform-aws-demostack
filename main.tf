@@ -72,7 +72,7 @@ module "primarycluster" {
   nomad_gossip_key      = data.terraform_remote_state.terraform-tls-certificate.outputs.nomad_gossip_key
 }
 
-
+/*
 module "secondarycluster" {
     source = "./modules"
   owner                = var.owner
@@ -113,7 +113,7 @@ module "secondarycluster" {
   nomad_gossip_key      = data.terraform_remote_state.terraform-tls-certificate.outputs.nomad_gossip_key
 }
 
-
+*/
 /*
 module "tertiarycluster" {
     source = "./modules"
